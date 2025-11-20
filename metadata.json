@@ -1,0 +1,5 @@
+{
+  "name": "CareerCompnsate AI",
+  "description": "An intelligent career and compensation analyzer that predicts your next role and salary benchmarks using Gemini AI.",
+  "requestFramePermissions": []
+}
