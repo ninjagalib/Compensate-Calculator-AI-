@@ -6,10 +6,10 @@ export interface UserProfile {
   industry: string;
   
   // Detailed Compensation
-  baseSalary: number;
+  monthlyBaseSalary: number;
   monthlyIncentive: number;
-  monthlyProfitShare: number;
-  annualOvertime: number;
+  annualProfitShare: number;
+  monthlyOvertime: number;
   festivalBonus: number;
   providentFund: number;
   gratuity: number;
@@ -37,9 +37,15 @@ export interface MarketAnalysis {
   gapAnalysis: string;
 }
 
+export interface NegotiationStrategy {
+  whyYouArePerfect: string;
+  whyYouDeserveIt: string;
+  tips: string[];
+}
+
 export interface CompensationInsights {
   marketAnalysis: MarketAnalysis;
   nextCareerMove: NextRolePrediction;
-  negotiationTips: string[];
-  verdictColor: string; // Hex code or tailwind class hint
+  negotiation: NegotiationStrategy;
+  verdictColor: string; 
 }
