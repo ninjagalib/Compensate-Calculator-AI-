@@ -38,7 +38,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 font-sans text-slate-900 selection:bg-blue-100">
+    <div className="min-h-screen bg-slate-50 font-sans text-slate-900 selection:bg-blue-100 flex flex-col">
       {/* Navigation */}
       <nav className="bg-white border-b border-slate-200 sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -58,7 +58,7 @@ const App: React.FC = () => {
       </nav>
 
       {/* Main Content */}
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow w-full">
         
         {!results && !isLoading && (
            <div className="max-w-2xl mx-auto mb-12 text-center">
@@ -95,9 +95,13 @@ const App: React.FC = () => {
       </main>
       
       {/* Footer */}
-      <footer className="bg-white border-t border-slate-100 py-12 mt-12">
-        <div className="max-w-6xl mx-auto px-4 text-center text-slate-400 text-sm">
-            <p>&copy; {new Date().getFullYear()} CareerCompnsate AI. Market data estimated by Gemini 2.5.</p>
+      <footer className="bg-white border-t border-slate-100 py-8 mt-auto">
+        <div className="max-w-6xl mx-auto px-4 flex flex-col items-center justify-center space-y-2">
+            <p className="text-slate-400 text-sm">&copy; {new Date().getFullYear()} CareerCompnsate AI. Market data estimated by Gemini 2.5.</p>
+            <div className="flex items-center space-x-1 text-xs font-medium text-slate-300">
+                <span>Developed by</span>
+                <span className="text-blue-400 bg-blue-50 px-2 py-0.5 rounded-full">@galibgfx</span>
+            </div>
         </div>
       </footer>
     </div>
