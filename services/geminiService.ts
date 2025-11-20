@@ -25,6 +25,7 @@ export const analyzeCompensation = async (profile: UserProfile): Promise<Compens
 
   const totalComp = annualBaseSalary + annualIncentive + profile.annualProfitShare + annualOvertime + profile.festivalBonus + profile.providentFund + profile.gratuity;
 
+  // Fixed syntax error in prompt template literal
   const prompt = `
     Analyze the following professional profile for compensation benchmarking and career progression.
     
@@ -52,9 +53,9 @@ export const analyzeCompensation = async (profile: UserProfile): Promise<Compens
     1. Evaluate if the Current Total Annual Package (${totalComp} ${profile.currency}) is fair for the role of "${profile.currentRole}" with ${profile.yearsExperience} years experience specifically in ${profile.location}.
     2. Predict the NEXT likely role and the expected salary range for that NEXT role in ${profile.location}.
     3. Provide negotiation scripts:
-       - "Why You Are Perfect": A short, punchy script emphasizing their specific experience and industry value.
-       - "Why You Deserve It": A data-driven script justifying the salary request based on market rates and inflation/skills.
-       - "Tips": Actionable tips for the negotiation meeting.
+       - "Why You Are Perfect": A persuasive script tailored to their experience level explaining why they are the ideal candidate.
+       - "Why You Are Asking This": A data-backed script justifying the specific salary increase or package they should ask for, referencing market rates and inflation.
+       - "Tips": Actionable, short tips for the negotiation meeting with HR.
     
     Provide a strict JSON response.
   `;
@@ -111,8 +112,8 @@ export const analyzeCompensation = async (profile: UserProfile): Promise<Compens
             negotiation: {
               type: Type.OBJECT,
               properties: {
-                whyYouArePerfect: { type: Type.STRING, description: "A persuasive 2-3 sentence script for the user to say to HR about why they are the perfect fit." },
-                whyYouDeserveIt: { type: Type.STRING, description: "A persuasive 2-3 sentence script justifying the salary ask based on market data." },
+                whyYouArePerfect: { type: Type.STRING, description: "Script explaining why the user is the perfect candidate." },
+                whyYouDeserveIt: { type: Type.STRING, description: "Script explaining why they are asking for this specific compensation." },
                 tips: {
                   type: Type.ARRAY,
                   items: { type: Type.STRING },

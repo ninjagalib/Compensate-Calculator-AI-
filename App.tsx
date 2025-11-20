@@ -38,31 +38,29 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white font-sans text-slate-900 selection:bg-blue-100 flex flex-col">
-      {/* Navigation */}
-      <nav className="bg-white/80 backdrop-blur-md border-b border-slate-100 sticky top-0 z-50">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16 items-center">
-            <div className="flex items-center space-x-2 cursor-pointer" onClick={handleReset}>
-              <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold shadow-lg shadow-blue-200">
+    <div className="min-h-screen bg-white font-sans text-slate-900 selection:bg-slate-100 flex flex-col">
+      {/* Minimal Navigation */}
+      <nav className="bg-white sticky top-0 z-50 py-6">
+        <div className="max-w-5xl mx-auto px-6 flex justify-center">
+            <div className="flex items-center space-x-3 cursor-pointer group" onClick={handleReset}>
+              <div className="w-10 h-10 bg-slate-900 rounded-xl flex items-center justify-center text-white font-bold shadow-md group-hover:scale-105 transition-transform">
                 C
               </div>
-              <span className="text-xl font-bold tracking-tight text-slate-800">Compnsate<span className="text-blue-600">AI</span></span>
+              <span className="text-2xl font-bold tracking-tighter text-slate-900">Compnsate<span className="text-slate-400">AI</span></span>
             </div>
-          </div>
         </div>
       </nav>
 
       {/* Main Content */}
-      <main className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow w-full">
+      <main className="max-w-4xl mx-auto px-4 sm:px-6 py-10 flex-grow w-full">
         
         {!results && !isLoading && (
-           <div className="max-w-2xl mx-auto mb-16 text-center animate-fade-in">
-              <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight leading-tight">
-                Know Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">True Worth</span>
+           <div className="max-w-2xl mx-auto mb-12 text-center animate-fade-in">
+              <h1 className="text-4xl sm:text-6xl font-black text-slate-900 mb-6 tracking-tight">
+                Know Your Worth.
               </h1>
-              <p className="text-lg text-slate-500 leading-relaxed max-w-xl mx-auto">
-                Stop guessing. Use advanced AI to analyze your total compensation, benchmark against the market, and get the script to negotiate your next raise.
+              <p className="text-lg text-slate-500 leading-relaxed max-w-lg mx-auto font-medium">
+                Real compensation intelligence. Precise salary benchmarking.
               </p>
            </div>
         )}
@@ -79,7 +77,7 @@ const App: React.FC = () => {
           ) : (
             <div className="max-w-3xl mx-auto">
                {error && (
-                 <div className="mb-6 p-4 bg-red-50 border border-red-100 text-red-600 rounded-lg text-sm">
+                 <div className="mb-6 p-4 bg-red-50 text-red-600 rounded-xl text-sm font-medium text-center">
                     {error}
                  </div>
                )}
@@ -90,11 +88,9 @@ const App: React.FC = () => {
 
       </main>
       
-      {/* Footer */}
-      <footer className="bg-white border-t border-slate-100 py-8 mt-auto">
-        <div className="max-w-5xl mx-auto px-4 flex flex-col items-center justify-center space-y-2">
-            <p className="text-slate-400 text-sm">&copy; {new Date().getFullYear()} CareerCompnsate AI.</p>
-        </div>
+      {/* Minimal Footer */}
+      <footer className="py-8 mt-auto text-center">
+        <p className="text-slate-300 text-sm font-medium">&copy; {new Date().getFullYear()} CareerCompnsate AI</p>
       </footer>
     </div>
   );
