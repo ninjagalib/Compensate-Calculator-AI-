@@ -132,7 +132,9 @@ const App: React.FC = () => {
       
       {/* Minimal Footer */}
       <footer className="py-8 mt-auto text-center">
-        <p className="text-slate-400 text-sm font-medium">&copy; {new Date().getFullYear()} CareerCompensate AI</p>
+        <p className="text-slate-400 text-sm font-medium">
+          Developed by <a href="https://www.linkedin.com/in/aggalib/" target="_blank" rel="noopener noreferrer" className="hover:text-indigo-600 transition-colors underline decoration-indigo-200 hover:decoration-indigo-600">ahilgalib</a>
+        </p>
       </footer>
     </div>
   );
